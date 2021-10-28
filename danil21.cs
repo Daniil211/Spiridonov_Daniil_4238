@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,13 +32,7 @@ namespace ConsoleApplication13
             }
         }
         static void Mathh(int[,] A1, int[,] A2, int[,] C, int n1, int n2, int m1, int m2)
-        {
-            if (m1 != n2)
-            {
-                Console.WriteLine("Умножить нельзя");
-            }
-            else
-            {
+            { 
                 for (int i = 0; i < n1; i++)
                 {
                     for (int j = 0; j < m2; j++)
@@ -52,8 +46,8 @@ namespace ConsoleApplication13
                     }
                     Console.WriteLine();
                 }
+            
             }
-        }
         static void Main(string[] args)
         {
             int[,] A1;
@@ -74,11 +68,18 @@ namespace ConsoleApplication13
             Console.WriteLine("Их произведение:");
             Mathh(A1, A2, C, n1, n2, m1, m2);
             Console.ReadKey();
+            if (m1 != n2)
+            {
+                Mathh(A1, A2, C, n1, m1, n2, m2);
+            }
+            else
+            {
+                Console.WriteLine("Умножить нельзя");
+            }
+            Console.ReadKey();
         }
     }
 }
-
-
 
 
 
