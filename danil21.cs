@@ -35,7 +35,7 @@ namespace ConsoleApplication13
         {
             if (m1 != n2)
             {
-                Console.WriteLine("Умножение невозможно");
+                Console.WriteLine("Умножить нельзя");
             }
             else
             {
@@ -67,11 +67,11 @@ namespace ConsoleApplication13
             int[,] C = new int[n1, m2];
             fillMatr(A1, n1, m1);
             fillMatr(A2, n2, m2);
-            Console.WriteLine("Матрица A:");
+            Console.WriteLine("Первая матрица:");
             Outpuit(A1, n1, m1);
-            Console.WriteLine("Матрица A2:");
+            Console.WriteLine("Вторая матрица:");
             Outpuit(A2, n2, m2);
-            Console.WriteLine("Произведение:");
+            Console.WriteLine("Их произведение:");
             Mathh(A1, A2, C, n1, n2, m1, m2);
             Console.ReadKey();
         }
