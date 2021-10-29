@@ -32,29 +32,33 @@ namespace ConsoleApplication13
             }
         }
         static void Mathh(int[,] A1, int[,] A2, int[,] C, int n1, int n2, int m1, int m2)
-            { 
-                for (int i = 0; i < n1; i++)
+        {
+            for (int i = 0; i < n1; i++)
+            {
+                for (int j = 0; j < m2; j++)
                 {
-                    for (int j = 0; j < m2; j++)
+                    C[i, j] = 0;
+                    for (int k = 0; k < m1; k++)
                     {
-                        C[i, j] = 0;
-                        for (int k = 0; k < m1; k++)
-                        {
-                            C[i, j] += A1[i, k] * A2[k, j];
-                        }
-                        Console.Write(C[i, j] + " ");
+                        C[i, j] += A1[i, k] * A2[k, j];
                     }
-                    Console.WriteLine();
+                    Console.Write(C[i, j] + " ");
                 }
-            
+                Console.WriteLine();
             }
+
+        }
         static void Main(string[] args)
         {
             int[,] A1;
             int n1, m1, n2, m2;
+            Console.WriteLine("Введите число строчек первой матрицы:");
             n1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите число столбцов первой матрицы::");
             n2 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите число строчек второй матрицы:");
             m1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите число столбцов второй матрицы::");
             m2 = Convert.ToInt32(Console.ReadLine());
             A1 = new int[n1, m1];
             int[,] A2 = new int[n2, m2];
@@ -68,7 +72,7 @@ namespace ConsoleApplication13
             Console.WriteLine("Их произведение:");
             Mathh(A1, A2, C, n1, n2, m1, m2);
             Console.ReadKey();
-            if (m1 != n2)
+            if (n2 == m1)
             {
                 Mathh(A1, A2, C, n1, m1, n2, m2);
             }
@@ -80,6 +84,5 @@ namespace ConsoleApplication13
         }
     }
 }
-
 
 
