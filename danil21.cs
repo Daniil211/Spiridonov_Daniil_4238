@@ -38,9 +38,9 @@ namespace ConsoleApplication13
                 for (int j = 0; j < m2; j++)
                 {
                     C[i, j] = 0;
-                    for (int k = 0; k < m1; k++)
+                    for (int s = 0; s < m1; s++)
                     {
-                        C[i, j] += A1[i, k] * A2[k, j];
+                        C[i, j] += A1[i, s] * A2[s, j];
                     }
                     Console.Write(C[i, j] + " ");
                 }
@@ -84,5 +84,3 @@ namespace ConsoleApplication13
         }
     }
 }
-
-
